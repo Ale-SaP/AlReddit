@@ -1,2 +1,3 @@
 .env
 reddit.py
+__pycache__
