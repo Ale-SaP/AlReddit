@@ -6,7 +6,7 @@ env = environ.Env()
 environ.Env.read_env()
 
 import random
-def main():
+def firstCall():
     reddit = praw.Reddit(
         client_id = env("CLIENT_ID"),
         client_secret = env("SECRET_KEY"),
@@ -15,12 +15,4 @@ def main():
     )
 
     state = str(random.randint(0, 65000))
-    print(reddit.auth.url(scopes=["account"], state=state, duration="permanent"))
-    print(reddit.user.me())
-    choice = input("ready?")
-    print(reddit.user.me())
-    if (choice == "y"):
-        for submission in reddit.front.hot():
-            print(submission)
-
-main()
+    return(reddit.auth.url(scopes=["account"], state=state, duration="permanent"))
