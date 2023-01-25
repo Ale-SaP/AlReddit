@@ -21,3 +21,8 @@ def getLink(request):
         return Response({"link": link, "successful": True})
     except:
         return Response({"link": "error", "successful": False})
+
+@api_view(["POST"])
+def receiveCredentials(request):
+    print(request.data)
+    return Response({"received": True}) 

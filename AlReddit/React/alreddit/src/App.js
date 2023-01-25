@@ -1,9 +1,11 @@
-import './App.css';
-import MainPage from './parts/loginpage/MainPage';
-
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider} from '@tanstack/react-query'
-import Placeholder from './Placeholder';
+import 'bulma/css/bulma.css'
+
+import './App.css';
+
+import Paths from './parts/Paths';
+import HomeScreen from './parts/Homepage/HomeScreen';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,12 +21,8 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter >
         <Routes>
-          <Route path="" element={<div className='App grey'><Placeholder/><MainPage/></div>}/>
-
-          <Route path="/log">
-            <Route path=':parameters' element={<div className='App grey'><Placeholder/><MainPage/></div>}>     
-            </Route>
-          </Route>
+          <Route path="" element={<div className='App'><HomeScreen /></div>}/>
+          <Route path="*" element={<div className='App'><Paths /></div>} />
         </Routes>
 
       </BrowserRouter>

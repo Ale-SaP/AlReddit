@@ -1,4 +1,6 @@
-export default function Placeholder() {
+import LoginButton from "./LoginButton";
+
+export default function HomeScreen() {
     return(
         <div>
             <section className="section">
@@ -9,6 +11,7 @@ export default function Placeholder() {
                     <p className="subtitle">
                         My first website with <strong>Bulma</strong>!
                     </p>
+                    <LoginButton />
                 </div>
             </section>
         </div>
