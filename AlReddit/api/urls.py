@@ -3,7 +3,6 @@ from . import views
 
 urlpatterns = [
     path('test/', views.test),
-    path('check/state=<slug:state>&code=<slug:code>', views.check),
     path('initial-request/', views.getLink),
     path('receive-credentials/', views.receiveCredentials),
 ]
