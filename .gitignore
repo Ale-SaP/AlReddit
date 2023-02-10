@@ -3,3 +3,5 @@ reddit.py
 __pycache__
 Tests
 AlReddit/api/stateLogs.db
+migrations
+AlReddit/api/statesLog.py
