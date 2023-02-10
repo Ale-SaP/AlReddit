@@ -1,5 +1,6 @@
 import sqlite3
 
+
 def initialize():
     conn = sqlite3.connect('stateLogs.db')
     c = conn.cursor()
