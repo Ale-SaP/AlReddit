@@ -1,4 +1,4 @@
-import { createLink } from "../../utils/calls";
+import { createLink } from "../../utils/AuthenticationCalls";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -17,12 +17,12 @@ export default function LoginButton() {
         e.preventDefault()
         try {
             const link = await createLink()
-                if (link["successful"] === true) { 
+                if (link !== "error") { 
                     setText(
                         <div className="content distance">
-                            <Link to={"/" + link["link"]}
+                            <Link to={"/" + link}
                             target="_blank" rel="noreferrer">
-                                <a href={link["link"]}>
+                                <a href={link}>
                                     Click Here!
                                 </a>
                             </Link>

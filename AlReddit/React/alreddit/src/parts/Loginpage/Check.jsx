@@ -2,7 +2,7 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query"
 
 import Screen from "./Screen";
-import { postCredentials } from "../../utils/calls";
+import { postCredentials } from "../../utils/AuthenticationCalls";
 
 export default function Check() {
     const [search, setSearch] = useSearchParams();
@@ -14,18 +14,21 @@ export default function Check() {
     const navigate = useNavigate()
     let direction = "/login-error"
     
-    const { isLoading, isError, data, error } = useQuery( ["webData", values], async () => { return (await postCredentials(values)) })
+    const { isLoading, isError, data, error } = useQuery( ["webData", values], async () => {
+        return (await postCredentials(values)) })
 
 
     while (isLoading) { return (
         <div>
-            <Screen state={state} code={code} />
+            <Screen />
         </div>
     ) }
 
-    if (isError) {}
+    if (isError) {
+        <h1>{error}</h1>
+    }
 
-    if (data["data"].received) {
+    if (data["data"]) {
         direction = "/your-home"
     }
 

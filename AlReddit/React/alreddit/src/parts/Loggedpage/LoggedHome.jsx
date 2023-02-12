@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
-
 export default function LoggedHome() {
+    const { isLoading, isError, data, error } = useQuery( ["webData", values], async () => {
+        return (await getFrontPage(values)) })
 }
