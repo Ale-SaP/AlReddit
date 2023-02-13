@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 //Selector refers to either hot, top, new, controversial and etc
-const getFrontPage = async (token, selector="hot") => {
+ const getFrontPage = async (token, selector="hot") => {
     let response
     const post =
     await axios.post("http://127.0.0.1:8000/api/get-front-page/", {"token":token, "selector":selector})    
@@ -14,3 +14,5 @@ const getFrontPage = async (token, selector="hot") => {
     }
     else {return "Error"}
 }
+
+export default getFrontPage

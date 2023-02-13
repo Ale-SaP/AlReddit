@@ -4,7 +4,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-from .reddit_api import *
+from .reddit_api.authorizations import *
 from .statesLog import logState, searchForState
 
 from .models import State
