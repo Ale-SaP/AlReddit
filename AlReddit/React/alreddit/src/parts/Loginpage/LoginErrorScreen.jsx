@@ -1,16 +1,16 @@
-import NavBar from "./NavBar";
+import NavBar from "../Homepage/NavBar";
 
-export default function HomeScreen() {
+export default function LoginErrorPage() {
     return(
         <div>
             <NavBar />
-            <section className="hero is-primary">
+            <section className="hero is-danger">
                 <div className="hero-body">
                     <h1 className="title">
-                        Welcome to AlReddit!
+                        Whoops! An error ocurred!
                     </h1>
                     <p className="subtitle">
-                        A better Reddit experience
+                        It seems our servers or Reddit's are down. <strong>Please stand by and try again!</strong>
                     </p>
                 </div>
             </section>

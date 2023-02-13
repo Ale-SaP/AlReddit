@@ -1,4 +1,4 @@
-export default function Screen({status, code}) {
+export default function LoadingScreen() {
     return(
             <div className="content distance">
                 <h3> Your authorization was recieved, wait a second! </h3>

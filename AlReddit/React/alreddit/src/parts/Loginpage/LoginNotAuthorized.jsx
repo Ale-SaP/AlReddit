@@ -1,16 +1,16 @@
-import NavBar from "./NavBar";
+import NavBar from "../Homepage/NavBar";
 
-export default function HomeScreen() {
+export default function LoginNotAuthorized() {
     return(
         <div>
             <NavBar />
-            <section className="hero is-primary">
+            <section className="hero is-danger">
                 <div className="hero-body">
                     <h1 className="title">
-                        Welcome to AlReddit!
+                        Whoops! The session is not authorized!
                     </h1>
                     <p className="subtitle">
-                        A better Reddit experience
+                        Try logging in again and when redirected, click <strong>Allow</strong>!
                     </p>
                 </div>
             </section>
