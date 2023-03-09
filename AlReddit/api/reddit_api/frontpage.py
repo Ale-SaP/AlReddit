@@ -1,9 +1,9 @@
-from reddit_object import *
+from .reddit_object import *
 
 #Selection options: best, controversial, gilded, hot, new, rising, random_rising, top
 #Only top and controversial can be sorted by time
 #time = "all", "day", "hour", "month", "week", or "year".
-def frontPagePosts(re_token, selection="hot", limit_given=30, time="week"):
+def frontPagePosts(re_token, selection="hot", limit_given=15, time="week"):
     reddit = authorizedPraw(re_token)
     listOfPosts = []
 

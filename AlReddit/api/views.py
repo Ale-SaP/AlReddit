@@ -5,7 +5,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 from .reddit_api.authorizations import *
-from .statesLog import logState, searchForState
+from .reddit_api.frontpage import *
+from .reddit_api.reddit_object import *
 
 from .models import State
 from .serializers import StateSerializer
@@ -32,3 +33,16 @@ def receiveCredentials(request):
     except State.DoesNotExist:
         print("incorrect state")
         return Response(status=status.HTTP_404_NOT_FOUND)
+
+@api_view(["POST"])
+def returnFrontPage(request):
+    data = request.data
+    try:
+        if (not data["selection"]):
+            data["selection"] = "hot"
+        if (not data["time"]): 
+            data["time"] = "week"
+        if (not data["given_limit"]):
+            data["given_limit"] = 15
+    except:
+        return ("404")

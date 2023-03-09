@@ -13,16 +13,19 @@ export default function Check() {
 
     const navigate = useNavigate()
     let direction = "/log/not-authorized"
-    
-    const { isLoading, isError, data, error } = useQuery( ["webData", values], async () => {
-        return (await postCredentials(values)) })
+
+    const { isLoading, isError, data, error } = useQuery(["webData", values], async () => {
+        return (await postCredentials(values))
+    })
 
 
-    while (isLoading) { return (
-        <div>
-            <LoadingScreen />
-        </div>
-    ) }
+    while (isLoading) {
+        return (
+            <div>
+                <LoadingScreen />
+            </div>
+        )
+    }
 
     if (isError) {
         <h1>{error}</h1>
@@ -32,5 +35,5 @@ export default function Check() {
         direction = "/your-home"
     }
 
-   navigate(direction)
+    navigate(direction)
 }
