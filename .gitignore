@@ -5,3 +5,4 @@ Tests
 AlReddit/api/stateLogs.db
 migrations
 AlReddit/api/statesLog.py
+AlReddit/db.sqlite3

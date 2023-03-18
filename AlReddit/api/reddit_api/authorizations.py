@@ -23,7 +23,8 @@ def firstCall():
     createstate.save()
 
     url = reddit.auth.url(scopes=["account"], state=randomState, duration="permanent")
-    return({"url":url, "state":randomState})
+    print(url)
+    return({"url" : url, "sucess":True})
 
 #Receives the access token or "code", returns the refresh token.
 def authorizeWithCode(codeGiven):
