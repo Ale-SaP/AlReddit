@@ -1,8 +1,8 @@
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query"
 
-import LoadingScreen from "./LoadingScreen";
-import { postCredentials } from "../../utils/AuthenticationCalls";
+import LoadingScreen from "../../GeneralUse/LoadingScreen";
+import { postCredentials } from "../../../utils/AuthenticationCalls";
 
 export default function Check() {
     const [search] = useSearchParams();
@@ -21,9 +21,9 @@ export default function Check() {
 
     while (isLoading) {
         return (
-            <div>
+            <>
                 <LoadingScreen />
-            </div>
+            </>
         )
     }
 
@@ -31,8 +31,8 @@ export default function Check() {
         <h1>{error}</h1>
     }
 
-    if (data["token"]) {
-        direction = "/your-home"
+    if (data === 202) {
+        direction = "/"
     }
 
     navigate(direction)

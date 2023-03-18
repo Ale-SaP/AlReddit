@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import { createLink } from "../../utils/AuthenticationCalls"
+import { createLink } from "../../../utils/AuthenticationCalls"
 import { useNavigate } from "react-router-dom"
 
 export default function LoadLink() {
@@ -8,7 +8,7 @@ export default function LoadLink() {
         return (await createLink()) })
 
     if (isError) {
-        navigate("/home/login-error") }
+        navigate("/login-error") }
 
     if (isLoading) {
             return(
@@ -21,5 +21,5 @@ export default function LoadLink() {
         
     if (data) {
         console.log(data)
-        window.location.href = data}
+        window.location.href = data["url"]}
 }

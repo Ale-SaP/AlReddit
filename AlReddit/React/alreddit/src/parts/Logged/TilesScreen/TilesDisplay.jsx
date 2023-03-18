@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 import Tile from "./Tile"
-import pagination from "../../utils/pagination"
+import pagination from "../../../utils/pagination"
 
 export default function TilesDisplay({ posts, limit }) {
     const [pagPosts, setPagPosts] = useState(pagination(posts, limit))

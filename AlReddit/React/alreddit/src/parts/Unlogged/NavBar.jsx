@@ -26,8 +26,8 @@ export default function NavBar() {
                     <div className="navbar-start">
                         <div className="navbar-item">
                             <div className="buttons">
-                                <a href="/home" onClick={onHome} className="button navbar-item">Home</a>
-                                <a href="/home/load-link" onClick={onclick} className="navbar-item button is-primary">Login!</a>
+                                <a href="/" onClick={onHome} className="button navbar-item">Home</a>
+                                <a href="/load-link" onClick={onclick} className="navbar-item button is-primary">Login!</a>
                             </div>
                         </div>
                     </div>

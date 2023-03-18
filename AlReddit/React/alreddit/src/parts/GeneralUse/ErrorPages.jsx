@@ -1,16 +1,13 @@
-import NavBar from "../Homepage/NavBar";
-
-export default function LoginErrorPage() {
+export default function ErrorPages({Title, Txt}) {
     return(
         <div>
-            <NavBar />
             <section className="hero is-danger">
                 <div className="hero-body">
                     <h1 className="title">
-                        Whoops! An error ocurred!
+                        {Title}
                     </h1>
                     <p className="subtitle">
-                        It seems our servers or Reddit's are down. <strong>Please stand by and try again!</strong>
+                        {Txt}
                     </p>
                 </div>
             </section>
